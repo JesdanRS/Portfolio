@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'SVGL - Una librería hermosa con logos SVG',
+    description: 'Creada desde cero con Next.js y Tailwind CSS. Es una librería con logos SVG de las marcas más populares. Optimizada para SEO y rendimiento.',
+    image: '/projects/svgl-preview.png',
+    link: '#',
+    techs: ['Next.js', 'Tailwind CSS']
+  },
+  {
+    title: 'Proyecto 2',
+    description: 'Descripción breve del proyecto 2 con detalles relevantes sobre la tecnología utilizada.',
+    image: '/projects/proyecto2.png',
+    link: '#',
+    techs: ['React', 'Node.js']
+  },
+  {
+    title: 'Proyecto 3',
+    description: 'Descripción breve del proyecto 3 con detalles relevantes sobre la tecnología utilizada.',
+    image: '/projects/proyecto3.png',
+    link: '#',
+    techs: ['Vue', 'Firebase']
+  }
+];
+---
+
+<section id="projects" class="py-20 px-8 md:px-16">
+  <h2 class="text-4xl font-bold text-white mb-4 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg>
+    <span class="text-white">Proyectos</span>
+  </h2>
+  <p class="text-lg text-gray-300 mb-12">Algunos de mis trabajos destacados, enfocados en rendimiento, SEO y diseño moderno.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map(project => (
+      <ProjectCard 
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        link={project.link}
+        techs={project.techs}
+      />
+    ))}
+  </div>
+</section>
+
+<section id="about" class="py-20 px-8 md:px-16">
+  <h2 class="text-3xl font-bold text-white mb-12">About</h2>
+  <div class="max-w-3xl">
+    <p class="text-gray-400 mb-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.
+    </p>
+    <p class="text-gray-400">
+      Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.
+    </p>
+  </div>
+</section>

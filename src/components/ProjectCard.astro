@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+  techs?: string[];
+}
+
+const { title, description, image = "/placeholder-project.jpg", link = "#", techs = [] } = Astro.props;
+---
+
+<div class="bg-[#112240] rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.025] border border-[#233554]">
+  <div class="relative w-full h-48 bg-[#0a192f] flex items-center justify-center">
+    <img src={image} alt={title} class="object-contain h-full w-full" loading="lazy" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-2xl font-bold text-yellow-300 mb-2 flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg>
+      {title}
+    </h3>
+    <p class="text-gray-300 mb-4 text-base">{description}</p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {techs.map(tech => (
+        <span class="bg-[#1a2634] text-blue-200 text-xs px-3 py-1 rounded-full font-semibold shadow-sm border border-[#233554]">{tech}</span>
+      ))}
+    </div>
+    <a href={link} target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 bg-blue-300 bg-opacity-10 text-blue-300 rounded-md font-semibold hover:bg-opacity-20 transition-all duration-200 shadow">
+      Ver más →
+    </a>
+  </div>
+</div>

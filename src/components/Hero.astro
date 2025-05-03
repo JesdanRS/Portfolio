@@ -2,36 +2,61 @@
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<section class="min-h-screen flex flex-col md:flex-row justify-center items-center text-left px-8 md:px-16 py-20 gap-8 md:gap-16">
-  <img src="/src/assets/pfp.png" alt="Foto de perfil de Jesus Imaña" class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-blue-300 shadow-lg object-cover flex-shrink-0" />
-  <div class="flex flex-col items-center md:items-start flex-1">
-  <h1 class="text-5xl md:text-7xl font-bold text-white mb-2 flex items-center gap-3">
-    Hey, I'm Jesus Imaña
-    <span class="ml-2 px-3 py-1 bg-blue-300 bg-opacity-20 text-blue-200 text-xs rounded-full font-semibold align-middle">Available for Work</span>
-  </h1>
-  <p class="text-lg md:text-xl text-gray-400 mb-4 max-w-2xl">
-    <span class="font-semibold text-yellow-300">Frontend</span>,
-    <span class="text-blue-200 font-semibold">Backendr</span> and
-    <span class="text-pink-300 font-semibold">QA</span>. 
-    From La Paz, Bolivia.<br />
-    <span class="text-gray-300">DevOP Junior</span>
-  </p>
-  <div class="flex flex-col items-center md:items-start gap-4 w-full mt-6">
-    <div class="flex gap-5">
-      <a 
-        href="#projects" 
-        class="inline-block px-8 py-3 bg-transparent border-2 border-blue-300 text-blue-300 rounded-full hover:bg-blue-300 hover:bg-opacity-10 transition-all duration-300 font-semibold shadow"
-      >
-        Contact Me
-      </a>
-      <a 
-        href="#projects" 
-        class="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:bg-opacity-5 transition-all duration-300 font-semibold shadow"
-      >
-        Download CV
-      </a>
+<section class="min-h-screen relative overflow-hidden bg-black">
+  <!-- Contenedor principal con dos columnas -->
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between h-full px-8 md:px-16 py-10 relative z-10">
+    <!-- Columna izquierda con texto -->
+    <div class="flex flex-col items-start w-full md:w-1/2 text-left">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-2">
+        Hey, I'm Jesus Imaña
+        <div class="mt-2">
+          <span class="px-3 py-1 bg-blue-300 bg-opacity-20 text-blue-200 text-xs rounded-full font-semibold align-middle inline-block">Available for Work</span>
+        </div>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-4 max-w-xl">
+        <span class="font-semibold text-yellow-300">Frontend</span>,
+        <span class="text-blue-200 font-semibold">Backend</span> and
+        <span class="text-pink-300 font-semibold">QA</span>. 
+        From La Paz, Bolivia.<br />
+        <span class="text-gray-300">DevOps Junior</span>
+      </p>
+      <div class="flex flex-col items-start gap-4 w-full mt-6">
+        <div class="flex gap-5">
+          <a 
+            href="#projects" 
+            class="inline-block px-8 py-3 bg-transparent border-2 border-blue-300 text-blue-300 rounded-full hover:bg-blue-300 hover:bg-opacity-10 transition-all duration-300 font-semibold shadow"
+          >
+            Contact Me
+          </a>
+          <a 
+            href="#projects" 
+            class="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300 font-semibold shadow"
+          >
+            Download CV
+          </a>
+        </div>
+        <SocialLinks />
+      </div>
     </div>
-    <SocialLinks />
-  </div>
+    
+    <!-- Columna derecha con imagen grande -->
+    <div class="md:block w-1/2 flex h-screen relative">
+      <!-- Aquí irá la imagen que se difumina con el fondo -->
+      <!-- Nota: Reemplaza la ruta con tu nueva foto cuando la tengas -->
+      <div class="absolute right-0 top-0 h-full w-full overflow-hidden">
+        <img 
+          src="/src/assets/pfp.png" 
+          alt="Foto de perfil de Jesus Imaña" 
+          class="object-cover h-full w-full opacity-90 scale-110"
+        />
+        <!-- Efecto de difuminado con el fondo -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        <!-- Elementos decorativos como en la imagen de referencia -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/4 right-1/4 w-64 h-64 border border-gray-700 opacity-30 rotate-45"></div>
+          <div class="absolute bottom-1/3 right-1/3 w-32 h-32 border border-gray-700 opacity-20 -rotate-12"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

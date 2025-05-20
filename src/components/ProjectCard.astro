@@ -34,15 +34,15 @@ const { title, description, image = undefined, link = "#", techs = [], code = "#
         <span class="bg-[#192a45] text-blue-200 text-xs px-2 py-0.5 rounded-full font-semibold shadow-sm border border-[#233554]">{tech}</span>
       ))}
     </div>
-    <div class="flex gap-3 mt-4">
-      <a href={code} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow">
+    <div class="flex flex-col sm:flex-row gap-3 mt-4 w-full">
+      <a href={code} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow w-full sm:w-auto">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M16 18.72v-1.44a2.25 2.25 0 00-.64-1.59c2.14-.24 4.39-1.05 4.39-4.73a3.7 3.7 0 00-1-2.57 3.42 3.42 0 00-.09-2.54s-.81-.26-2.65 1a9.13 9.13 0 00-4.82 0c-1.84-1.26-2.65-1-2.65-1a3.42 3.42 0 00-.09 2.54 3.7 3.7 0 00-1 2.57c0 3.67 2.25 4.49 4.39 4.73a2.25 2.25 0 00-.64 1.59v1.44M9 19.25a3.38 3.38 0 003 0" />
         </svg>
         Code
       </a>
       {preview && preview !== "#" && (
-        <a href={preview} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow">
+        <a href={preview} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow w-full sm:w-auto">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
           </svg>

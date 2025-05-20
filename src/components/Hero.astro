@@ -1,5 +1,6 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import { Image } from "astro:assets";
 ---
 
 <section class="min-h-screen relative overflow-hidden bg-black flex items-center justify-center">
@@ -51,10 +52,14 @@ import SocialLinks from "./SocialLinks.astro";
       <!-- Aquí irá la imagen que se difumina con el fondo -->
       <!-- Nota: Reemplaza la ruta con tu nueva foto cuando la tengas -->
       <div class="absolute right-0 top-0 h-full w-full overflow-hidden">
-        <img 
+        <Image 
           src="/src/assets/profilePicture.jpg" 
           alt="Foto de perfil de Jesus Imaña" 
           class="object-cover h-full w-full opacity-90 scale-100"
+          loading="eager"	
+          width={600}
+          height={600}
+          fit="cover"
         />
         <!-- Efecto de difuminado con el fondo -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.47)_50%,black_90%),linear-gradient(to_right,rgba(0,0,0,0)_80%,rgba(0,0,0,0.85)_100%)] from-transparent via-black/50 to-black"></div>

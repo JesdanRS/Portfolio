@@ -1,6 +1,7 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import { Image } from "astro:assets";
+import profilePicture from '../assets/profilePicture.jpg';
 ---
 
 <section class="min-h-screen relative overflow-hidden bg-black flex items-center justify-center">
@@ -37,7 +38,7 @@ import { Image } from "astro:assets";
             Contact Me
           </a>
           <a 
-            href="/src/assets/JesusImañaResume.pdf" 
+            href="/JesusImañaResume.pdf" 
             class="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300 font-semibold shadow"
             download
           >
@@ -54,7 +55,7 @@ import { Image } from "astro:assets";
       <!-- Nota: Reemplaza la ruta con tu nueva foto cuando la tengas -->
       <div class="absolute right-0 top-0 h-full w-full overflow-hidden">
         <Image 
-          src="/src/assets/profilePicture.jpg" 
+          src={profilePicture} 
           alt="Foto de perfil de Jesus Imaña" 
           class="object-cover h-full w-full opacity-90 scale-100"
           loading="eager"

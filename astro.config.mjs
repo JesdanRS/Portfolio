@@ -5,10 +5,5 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  devToolbar: { enabled: false },
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/squoosh'
-    }
-  }
+  devToolbar: { enabled: false }
 });

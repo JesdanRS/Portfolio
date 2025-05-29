@@ -13,36 +13,62 @@ interface Props {
 const { title, description, image = undefined, link = "#", techs = [], code = "#", preview = "#" } = Astro.props;
 ---
 
-<div class="bg-[#112240] rounded-xl shadow-xl border border-[#233554] w-full max-w-[350px] mx-auto group cursor-pointer overflow-visible relative hover:z-50">
-  <div class="relative w-full h-56 bg-[#0e1830] flex items-center justify-center transition-all duration-300 overflow-visible z-0">
+<div class="group bg-[#112240] rounded-xl shadow-xl border border-[#233554] w-full max-w-[350px] mx-auto overflow-visible relative hover:z-50 transform transition-all duration-500 hover:-translate-y-2 hover:border-yellow-300/50">
+  <div class="relative w-full h-56 bg-[#0e1830] flex items-center justify-center transition-all duration-300 overflow-visible z-0 rounded-t-xl">
     {image ? (
-      <div class="w-full h-full flex items-center justify-center">
-        <Image src={image} alt={title} class="object-contain h-full w-full transition-transform duration-500 scale-100 hover:scale-[1.65] hover:drop-shadow-2xl hover:-translate-y-10 hover:shadow-[0_16px_48px_16px_rgba(0,0,0,0.65)]" loading="lazy" style="height: 100%; width: 100%; object-fit: contain; position: relative; z-index: 10;" />
+      <div class="w-full h-full flex items-center justify-center group-hover:shadow-2xl">
+        <Image 
+          src={image} 
+          alt={title} 
+          class="object-contain h-full w-full transition-transform duration-500 scale-100 group-hover:scale-[1.65] group-hover:-translate-y-10" 
+          loading="lazy" 
+          style="height: 100%; width: 100%; object-fit: contain; position: relative; z-index: 10;" 
+        />
       </div>
     ) : (
-      <img src="/placeholder-project.jpg" alt={title} class="object-contain h-full w-full transition-transform duration-500 scale-100 group-hover:scale-[1.45] group-hover:drop-shadow-2xl group-hover:-translate-y-10 group-hover:shadow-[0_16px_48px_16px_rgba(0,0,0,0.65)]" loading="lazy" style="position: relative; z-index: 10;" />
+      <img 
+        src="/placeholder-project.jpg" 
+        alt={title} 
+        class="object-contain h-full w-full transition-transform duration-500 scale-100 group-hover:scale-[1.45] group-hover:-translate-y-10" 
+        loading="lazy" 
+        style="position: relative; z-index: 10;" 
+      />
     )}
+    <div class="absolute inset-0 bg-gradient-to-t from-[#112240] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
   </div>
-  <div class="p-4">
-    <h3 class="text-lg font-semibold text-yellow-300 mb-2 flex items-center gap-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg>
+  
+  <div class="p-6">
+    <h3 class="text-lg font-semibold text-yellow-300 mb-3 flex items-center gap-2 group-hover:text-yellow-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-yellow-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+      </svg>
       {title}
     </h3>
-    <p class="text-gray-400 mb-3 text-sm">{description}</p>
-    <div class="flex flex-wrap gap-2 mb-3">
+    <p class="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300">{description}</p>
+    <div class="flex flex-wrap gap-2 mb-4">
       {techs.map(tech => (
-        <span class="bg-[#192a45] text-blue-200 text-xs px-2 py-0.5 rounded-full font-semibold shadow-sm border border-[#233554]">{tech}</span>
+        <span class="bg-[#192a45] text-blue-200 text-xs px-3 py-1 rounded-full font-medium shadow-sm border border-[#233554] transition-all duration-300 hover:border-blue-300/50 hover:text-blue-100">{tech}</span>
       ))}
     </div>
-    <div class="flex flex-col sm:flex-row gap-3 mt-4 w-full">
-      <a href={code} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow w-full sm:w-auto">
+    <div class="flex flex-col sm:flex-row gap-3 mt-4">
+      <a 
+        href={code} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700/20 border border-blue-800 rounded-lg text-white hover:bg-blue-700/30 hover:text-yellow-300 transition-all duration-300 shadow-lg hover:shadow-blue-900/30 w-full sm:w-auto"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M16 18.72v-1.44a2.25 2.25 0 00-.64-1.59c2.14-.24 4.39-1.05 4.39-4.73a3.7 3.7 0 00-1-2.57 3.42 3.42 0 00-.09-2.54s-.81-.26-2.65 1a9.13 9.13 0 00-4.82 0c-1.84-1.26-2.65-1-2.65-1a3.42 3.42 0 00-.09 2.54 3.7 3.7 0 00-1 2.57c0 3.67 2.25 4.49 4.39 4.73a2.25 2.25 0 00-.64 1.59v1.44M9 19.25a3.38 3.38 0 003 0" />
         </svg>
         Code
       </a>
       {preview && preview !== "#" && (
-        <a href={preview} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700 border border-blue-800 rounded-lg text-white hover:bg-blue-800 hover:text-yellow-300 transition-all duration-200 shadow w-full sm:w-auto">
+        <a 
+          href={preview} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700/20 border border-blue-800 rounded-lg text-white hover:bg-blue-700/30 hover:text-yellow-300 transition-all duration-300 shadow-lg hover:shadow-blue-900/30 w-full sm:w-auto"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
           </svg>
@@ -50,6 +76,5 @@ const { title, description, image = undefined, link = "#", techs = [], code = "#
         </a>
       )}
     </div>
-  
   </div>
 </div>

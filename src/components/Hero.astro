@@ -4,71 +4,81 @@ import { Image } from "astro:assets";
 import profilePicture from '../assets/profilePicture.jpg';
 ---
 
-<section class="min-h-screen relative overflow-hidden bg-black flex items-center justify-center">
-  <!-- Contenedor principal con dos columnas -->
+<section class="min-h-screen relative overflow-hidden bg-gradient-to-b from-black via-[#0a192f] to-black flex items-center justify-center">
+  <!-- Animated background -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+  </div>
+
   <div class="max-w-6xl w-4/5 flex flex-col md:flex-row gap-x-28 items-center justify-between h-full relative z-10">
-    <!-- Columna izquierda con texto -->
     <div class="flex flex-col items-start w-full md:w-1/2 text-left">
-      <h1 class="text-4xl md:text-6xl font-bold text-white mb-2">
-        Hey, I'm Jesus Imaña
-        <div class="mt-2">
-          <a href="https:/www.linkedin.com/in/jesús-imaña-a09b72246" target="_blank" rel="noopener" class="flex items-center transition md:hover:scale-105"> <div class="flex items-center "> 
-            <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">      
-              <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2563eb_0%,#38bdf8_40%,#60a5fa_70%,#2563eb_100%)]"></span> <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-blue-800 bg-blue-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"> Available to work 
-              </div> 
-            </span> 
-          </div> 
+      <div class="relative">
+        <span class="absolute -left-8 -top-8 text-7xl text-yellow-300/10">&lt;</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-2 relative">
+          Hey, I'm Jesus Imaña
+          <span class="absolute -right-8 -bottom-8 text-7xl text-yellow-300/10">/&gt;</span>
+        </h1>
+      </div>
+      <div class="mt-4">
+        <a href="https:/www.linkedin.com/in/jesús-imaña-a09b72246" target="_blank" rel="noopener" 
+           class="group flex items-center transition transform hover:scale-105"> 
+          <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">      
+            <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2563eb_0%,#38bdf8_50%,#60a5fa_100%)]"></span>
+            <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-blue-800 bg-blue-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap group-hover:bg-blue-200 transition-colors">
+              Available to work 
+            </div> 
+          </span> 
         </a>
-        </div>
-      </h1>
-      <p class="text-base md:text-lg text-gray-400 mb-4 max-w-lg">
+      </div>
+      <p class="text-base md:text-lg text-gray-400 mb-4 max-w-lg mt-6">
         <span class="font-semibold text-yellow-300">Frontend</span>,
         <span class="text-blue-200 font-semibold">Backend</span> and
-        <span class="text-pink-300 font-semibold">QA</span>. 
+        <span class="text-pink-300 font-semibold">QA</span> Developer. 
         From La Paz, Bolivia.<br />
-        <span class="text-gray-300">FullStack Junior</span>
+        <span class="text-gray-300">FullStack Junior Developer passionate about creating exceptional digital experiences.</span>
       </p>
       <div class="flex flex-col items-start gap-4 w-full mt-6">
-        <div class="flex gap-5">
+        <div class="flex gap-5 flex-wrap">
           <a 
             href="mailto:imajesus08@gmail.com" 
-            class="px-8 py-3 bg-transparent border-2 border-blue-300 text-blue-300 rounded-full hover:bg-blue-300 hover:bg-opacity-10 transition-all duration-300 font-semibold shadow flex items-center gap-2"
+            class="group px-8 py-3 bg-transparent border-2 border-blue-300 text-blue-300 rounded-full hover:bg-blue-300/10 transition-all duration-300 font-semibold shadow-lg hover:shadow-blue-500/20 flex items-center gap-2 transform hover:scale-105"
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20V8.99l8 6.99 8-6.99V20H4z"/></svg>
+            <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20V8.99l8 6.99 8-6.99V20H4z"/></svg>
             Contact Me
           </a>
           <a 
             href="/JesusImañaResume.pdf" 
-            class="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300 font-semibold shadow"
+            class="group inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white/10 transition-all duration-300 font-semibold shadow-lg hover:shadow-white/20 transform hover:scale-105"
             download
           >
-            Download CV
+            <span class="flex items-center gap-2">
+              <svg class="w-5 h-5 transition-transform group-hover:-translate-y-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4zm9-13h-6v2h4v12H5V5h4V3H3v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3z"/></svg>
+              Download CV
+            </span>
           </a>
         </div>
         <SocialLinks />
       </div>
     </div>
     
-    <!-- Columna derecha con imagen grande -->
-    <div class="md:block w-full flex h-screen relative">
-      <!-- Aquí irá la imagen que se difumina con el fondo -->
-      <!-- Nota: Reemplaza la ruta con tu nueva foto cuando la tengas -->
+    <div class="md:block w-full md:w-1/2 h-screen relative mt-12 md:mt-0">
       <div class="absolute right-0 top-0 h-full w-full overflow-hidden">
-        <Image 
-          src={profilePicture} 
-          alt="Foto de perfil de Jesus Imaña" 
-          class="object-cover h-full w-full opacity-90 scale-100"
-          loading="eager"
-          width={600}
-          height={600}
-          fit="cover"
-        />
-        <!-- Efecto de difuminado con el fondo -->
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.47)_50%,black_90%),linear-gradient(to_right,rgba(0,0,0,0)_80%,rgba(0,0,0,0.85)_100%)] from-transparent via-black/50 to-black"></div>
-        <!-- Elementos decorativos como en la imagen de referencia -->
+        <div class="relative w-full h-full">
+          <Image 
+            src={profilePicture} 
+            alt="Foto de perfil de Jesus Imaña" 
+            class="object-cover h-full w-full rounded-3xl opacity-90 scale-100 transition-all duration-500 hover:scale-105"
+            loading="eager"
+            width={600}
+            height={600}
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/50 to-black rounded-3xl"></div>
+        </div>
+        
+        <!-- Decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
-          <div class="absolute top-1/4 right-1/4 w-64 h-64 border border-gray-700 opacity-30 rotate-45"></div>
-          <div class="absolute bottom-1/3 right-1/3 w-32 h-32 border border-gray-700 opacity-20 -rotate-12"></div>
+          <div class="absolute top-1/4 right-1/4 w-64 h-64 border border-yellow-300/20 opacity-30 rotate-45 animate-pulse"></div>
+          <div class="absolute bottom-1/3 right-1/3 w-32 h-32 border border-blue-300/20 opacity-20 -rotate-12 animate-pulse"></div>
         </div>
       </div>
     </div>
